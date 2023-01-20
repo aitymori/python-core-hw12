@@ -146,7 +146,7 @@ class AddressBook(UserDict):
     def search_contact(self, user_search):
         
         for record in ab.data.values():
-            result = str(record).find(user_search)
+            result = str(record).lower().find(user_search)
             if result != -1:
                 print (record)
 
@@ -212,7 +212,7 @@ if __name__ == '__main__':
     # AddressBook.print_page(AddressBook, 3)
 
     # Пошук в книзі контактів
-    user_search = 'Name'
-    # AddressBook.search_contact(AddressBook, user_search)
+    user_search = 'Ger'
+    AddressBook.search_contact(AddressBook, user_search.lower())
     AddressBook.write_file(AddressBook)
 
